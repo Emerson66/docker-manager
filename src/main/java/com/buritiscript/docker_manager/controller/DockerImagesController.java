@@ -25,10 +25,12 @@ public class DockerImagesController {
     public String getMethodName(@RequestParam String param) {
         return new String();
     }
+    
     @GetMapping("") 
     public List<Image> listImages(){
         return dockerService.listImages();
     }
+    @GetMapping("/")
     public List<Image> listImages(@RequestParam(required = false, defaultValue = "image-") String filterName){
         return dockerService.listImagesFilter(filterName);
     }
