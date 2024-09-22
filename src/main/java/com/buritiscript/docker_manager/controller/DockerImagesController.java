@@ -29,4 +29,7 @@ public class DockerImagesController {
     public List<Image> listImages(){
         return dockerService.listImages();
     }
+    public List<Image> listImages(@RequestParam(required = false, defaultValue = "image-") String filterName){
+        return dockerService.listImagesFilter(filterName);
+    }
 }
