@@ -21,11 +21,11 @@ public class DockerImagesController {
         this.dockerService = dockerService;
     }
 
-    @GetMapping("")
+    
     public String getMethodName(@RequestParam String param) {
         return new String();
     }
-    
+    @GetMapping("") 
     public List<Image> listImages(){
         return dockerService.listImages();
     }
